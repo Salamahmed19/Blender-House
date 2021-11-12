@@ -1,0 +1,15 @@
+.navber{
+    background-color:rgba(255, 68, 0, 0.562);
+    line-height: 40px;
+    font-size:20px;
+    font-weight:700;
+}
+.band{
+    color: rgba(65, 48, 48, 0.801);
+}
+.logout{
+    line-height: 42px;
+    font-size:20px;
+    font-weight:700;
+    color: rgba(65, 48, 48, 0.801);
+}

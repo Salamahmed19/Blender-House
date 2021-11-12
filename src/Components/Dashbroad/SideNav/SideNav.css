@@ -1,0 +1,17 @@
+.sidenav{
+    background-color:rgba(214, 156, 135, 0.562);
+    line-height: 25px;
+    font-size:15px;
+    font-weight:600;
+    min-height: 100vh;
+}
+.header{
+    background-color:rgba(214, 156, 135, 0.562);
+    padding: 15px;
+}
+
+.signout{
+    color: rgba(102, 75, 75, 0.932);
+    margin-left: -180px;
+    font-weight:500;
+}
