@@ -76,10 +76,10 @@ const OrderedItems = () => {
                                         <span>Order Status: {order.status}</span>
                                     </small>
                                 </Card.Text>
-                                <div className="d-flex justify-content-between">
+                                {order.status === 'Pending' && <div className="d-flex justify-content-between">
                                     <Button onClick={() => handleUpdateStatus(i)} style={{ backgroundColor: "Green" }}>Approve Order</Button>
                                     <Button onClick={() => handleDeleteOrder(order._id)} className="bg-danger">Delete Order</Button>
-                                </div>
+                                </div>}
                             </Card.Body>
                         </Card>
                     </Col>)

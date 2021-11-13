@@ -38,10 +38,10 @@ const MyCart = () => {
                 {myCart.length === 0 && <div className="m-5 p-5 fs-1">Add one or more items to show here</div>}
 
                 {
-                    myCart?.map(order => <Col key={order._id} md={6} sm={12}>
-                        <Card className="my-4 shadow" style={{ width: '26rem' }}>
-                            <Card.Img variant="top" src={order.product.imageUrl} />
-                            <Card.Body className="mx-3 px-4">
+                    myCart?.map(order => <Col key={order._id} md={4} sm={12}>
+                        <Card className="my-4 shadow" style={{ width: '19rem' }}>
+                            <Card.Img style={{ width: '180px' }} variant="top" src={order.product.imageUrl} />
+                            <Card.Body>
                                 <Card.Title>{order.product.name}</Card.Title>
                                 <Card.Text>
                                     <span>Price: {order.product.price} BDT</span> <span>Capacity: {order.product.capacity} LTR</span>
@@ -60,7 +60,7 @@ const MyCart = () => {
                                     <br />
                                     <span>Order Status: {order.status}</span>
                                 </Card.Text>
-                                <div className="d-flex justify-content-between px-5">
+                                <div className="d-flex justify-content-between">
                                     <Link to="/dashboard/payment"><Button className="bg-success">Pay Now</Button></Link>
                                     <Button onClick={() => handleCancel(order._id)} className="bg-danger">Cancel</Button>
                                 </div>
