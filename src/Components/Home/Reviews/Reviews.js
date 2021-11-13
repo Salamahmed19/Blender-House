@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Carousel, Col, Container, Row } from 'react-bootstrap';
+import Rating from 'react-rating';
 
 const Reviews = () => {
     const [reviews, setReviews] = useState([])
@@ -14,7 +15,7 @@ const Reviews = () => {
             <h2 className="text-center">Give a look at our products review</h2>
             <Carousel>
                 {
-                    reviews.map(review =><Carousel.Item key={review._id}>
+                    reviews.map(review => <Carousel.Item key={review._id}>
                         <Card className="my-3 shadow" >
                             <Row>
                                 <Col md={4} sm={12} className="border">
@@ -34,7 +35,7 @@ const Reviews = () => {
                                     </Card.Body>
                                 </Col>
                                 <Col md={4} sm={12} className="border">
-                                    <Card.Img style={{width:'260px'}} src={review.product.imageUrl} />
+                                    <Card.Img style={{ width: '260px' }} src={review.product.imageUrl} />
                                 </Col>
                                 <Col md={4} sm={12} className="border">
                                     <Card.Body className="p-5">
@@ -44,7 +45,10 @@ const Reviews = () => {
                                             <br />
                                             <span>Customer Email: {review.email}</span>
                                             <br />
-                                            <span>Rating: {review.count}</span>
+                                            <Rating
+                                                initialRating={review.count}
+                                                readonly
+                                            />
                                             <br />
                                             <span>Review: {review.feedback}</span>
                                         </Card.Text>
@@ -52,10 +56,10 @@ const Reviews = () => {
                                 </Col>
                             </Row>
                         </Card>
-    
+
                     </Carousel.Item>)
                 }
-                
+
             </Carousel>
         </Container>
     );
