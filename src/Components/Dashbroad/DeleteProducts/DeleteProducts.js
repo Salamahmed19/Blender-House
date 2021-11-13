@@ -7,13 +7,13 @@ const DeleteProducts = () => {
     const [isDeleted, setIsDeleted] = useState(null);
 
     useEffect(() => {
-        fetch("http://localhost:5000/allproducts")
+        fetch("https://aqueous-reef-20295.herokuapp.com/allproducts")
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [isDeleted])
 
     const handlePdDelete = (id) => {
-        fetch(`http://localhost:5000/deleteproduct/${id}`, {
+        fetch(`https://aqueous-reef-20295.herokuapp.com/deleteproduct/${id}`, {
             method: "DELETE",
             headers: { "content-type": "application/json" },
         })

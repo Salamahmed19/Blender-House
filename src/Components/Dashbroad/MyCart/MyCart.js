@@ -9,14 +9,14 @@ const MyCart = () => {
     const [isCancelled, setIsCancelled] = useState(null);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/mycart?email=${user.email}`)
-            // fetch('http://localhost:5000/cartProduct')
+        fetch(`https://aqueous-reef-20295.herokuapp.com/mycart?email=${user.email}`)
+            // fetch('https://aqueous-reef-20295.herokuapp.com/cartProduct')
             .then(res => res.json())
             .then(data => setMyCart(data))
     }, [user.email, isCancelled])
 
     const handleCancel = (id) => {
-        fetch(`http://localhost:5000/cancelproduct/${id}`, {
+        fetch(`https://aqueous-reef-20295.herokuapp.com/cancelproduct/${id}`, {
             method: "DELETE",
             headers: { "content-type": "application/json" },
         })

@@ -11,7 +11,7 @@ const PlaceOrder = () => {
     const { user } = useAuth()
 
     useEffect(() => {
-        fetch(`http://localhost:5000/cartProduct/${orderId}`)
+        fetch(`https://aqueous-reef-20295.herokuapp.com/cartProduct/${orderId}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [orderId])
@@ -19,7 +19,7 @@ const PlaceOrder = () => {
     const onSubmit = data => {
         data.product = product
 
-        fetch('http://localhost:5000/reviewProduct', {
+        fetch('https://aqueous-reef-20295.herokuapp.com/reviewProduct', {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

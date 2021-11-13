@@ -7,14 +7,14 @@ const OrderedItems = () => {
     const [orderDeleted, setOrderDeleted] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:5000/cartProduct')
+        fetch('https://aqueous-reef-20295.herokuapp.com/cartProduct')
             .then(res => res.json())
             .then(data => setAllOrder(data))
     }, [approved, orderDeleted])
 
     const handleUpdateStatus = i => {
         const data = allOrder[i];
-        fetch('http://localhost:5000/updatestatus', {
+        fetch('https://aqueous-reef-20295.herokuapp.com/updatestatus', {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),
@@ -32,7 +32,7 @@ const OrderedItems = () => {
     }
 
     const handleDeleteOrder = id => {
-        fetch(`http://localhost:5000/deleteorder/${id}`, {
+        fetch(`https://aqueous-reef-20295.herokuapp.com/deleteorder/${id}`, {
             method: "DELETE",
             headers: { "content-type": "application/json" },
         })

@@ -11,7 +11,7 @@ const PlaceOrder = () => {
     const { user } = useAuth()
 
     useEffect(() => {
-        fetch(`http://localhost:5000/cartProduct/${orderId}`)
+        fetch(`https://aqueous-reef-20295.herokuapp.com/cartProduct/${orderId}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [orderId])
@@ -20,7 +20,7 @@ const PlaceOrder = () => {
         data.product = product
         data.status = "Pending"
 
-        fetch('http://localhost:5000/cartProduct', {
+        fetch('https://aqueous-reef-20295.herokuapp.com/cartProduct', {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

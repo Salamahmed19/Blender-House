@@ -9,13 +9,13 @@ const UpdateProduct = () => {
     const [product, setProduct] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/cartProduct/${orderId}`)
+        fetch(`https://aqueous-reef-20295.herokuapp.com/cartProduct/${orderId}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [orderId])
 
     const onSubmit = data => {
-        fetch(`http://localhost:5000/updateProduct/${orderId}`, {
+        fetch(`https://aqueous-reef-20295.herokuapp.com/updateProduct/${orderId}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

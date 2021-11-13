@@ -6,14 +6,14 @@ const Users = () => {
     const [updated, setUpdated] = useState(null);
 
     useEffect(() => {
-        fetch("http://localhost:5000/users")
+        fetch("https://aqueous-reef-20295.herokuapp.com/users")
             .then(res => res.json())
             .then(data => setUsers(data))
     }, [updated])
 
     const handleUserDetails = (i) => {
         const user = users[i];
-        fetch('http://localhost:5000/updateuser', {
+        fetch('https://aqueous-reef-20295.herokuapp.com/updateuser', {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(user),
@@ -31,7 +31,7 @@ const Users = () => {
 
     const handleAdminDetails = (i) => {
         const user = users[i];
-        fetch('http://localhost:5000/removeadmin', {
+        fetch('https://aqueous-reef-20295.herokuapp.com/removeadmin', {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(user),
